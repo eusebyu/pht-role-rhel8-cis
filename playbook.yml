@@ -1,0 +1,12 @@
+---
+  - name: Ansible test
+    hosts: localhost
+    
+    tasks:
+      - name: Test ls command
+        shell: ls -latr
+        register: output
+        
+      - debug:
+        var: output.stdout_lines
+        
